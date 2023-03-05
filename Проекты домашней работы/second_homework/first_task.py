@@ -1,12 +1,10 @@
-import time
 from datetime import datetime
 from math import ceil
-
+print("Форматирование метки 1677691109")
+print("Это 2023-03-01 21:18:29")
 print("Без использования datetime")
 
-GMT = input("Введите часовой пояс\n")
-
-timestamp = time.time()
+timestamp = 1677691109
 
 date = ""
 
@@ -15,10 +13,7 @@ year = int(timestamp / 31556926)
 months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
 month_index = ceil((timestamp % 31556926)/2629743)
 
-if (year % 4 == 0 and year % 100 != 0 or year % 400 == 0) and months[month_index] == 2:
-    day = ((timestamp % 2629743) / 86400)-29
-else:
-    day = int(((timestamp % 2629743) / 86400) - 28)
+day = int(((timestamp % 2629743) / 86400) - 28)
 
 if day < 10:
     day = "0" + str(day)
@@ -37,7 +32,7 @@ if minute < 10:
 if second < 10:
     second = "0" + str(second)
 
-time += str(int(hour + int(GMT))) + ":" + str(int(minute)) + ":" + str(int(second))
+time += str(int(hour + 4.0)) + ":" + str(int(minute)) + ":" + str(int(second))
 
 print(date)
 print(time)
