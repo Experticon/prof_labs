@@ -1,4 +1,5 @@
 a = 10
 b = 15
-print(a + b)
+d = 50
+print(a + b + d)
 
